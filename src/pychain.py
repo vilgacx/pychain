@@ -6,10 +6,11 @@ class pyChain:
     def __init__(self):
         self.chain = [] 
         self.nodes = []
-        self.difficulty = max(3,3*(len(self.nodes)+1)//4);
+        self.difficulty = max(3,min(3*(len(self.nodes)+1)//4,6));
         self.chain.append(self.Block(0,"0"*64,None,0,0,"genesis"))
 
     def Block(self, index, hash, prev_hash, pow, nonce, data):
+        print(self.difficulty)
         return {
             "index": index,
             "timestamp": self.Timestamp(),

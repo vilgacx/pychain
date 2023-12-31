@@ -16,6 +16,7 @@ class pyChain:
             "hash": hash,
             "prev_hash": prev_hash,
             "pow": pow,
+            "transactions": [],
             "nonce": nonce,
             "data": data
         }

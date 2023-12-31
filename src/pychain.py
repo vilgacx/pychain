@@ -1,19 +1,20 @@
-from random import randint
 import hashlib
 import json
 import time
 
 class pyChain:
     def __init__(self):
-        self.chain = []
+        self.chain = [] 
+        self.nodes = []
+        self.difficulty = max(3,3*(len(self.nodes)+1)//4);
         self.chain.append(self.Block(0,"0"*64,None,0,0,"genesis"))
-        self.difficulty = 4;
 
     def Block(self, index, hash, prev_hash, pow, nonce, data):
         return {
             "index": index,
             "timestamp": self.Timestamp(),
             "hash": hash,
+            "difficulty": self.difficulty,
             "prev_hash": prev_hash,
             "pow": pow,
             "transactions": [],
@@ -35,7 +36,7 @@ class pyChain:
     
     def PoW(self, index, prev_pow, nonce, data):
         pow = 1
-        solve = str(randint(10**(self.difficulty-1),9*10**(self.difficulty-1)));
+        solve = "0"*self.difficulty;
 
         while True:
             digest = (str((pow+prev_pow+nonce**2)+index)+data).encode()

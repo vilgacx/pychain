@@ -3,3 +3,6 @@ test:
 
 clean:
 	rm -rf src/__pycache__
+
+serve:
+	python3 src/api.py

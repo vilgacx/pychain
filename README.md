@@ -1,3 +1,3 @@
 # pychain
 
-i gotta complete this before new year
+little PoW blockchain written in python.

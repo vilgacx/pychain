@@ -55,6 +55,28 @@ class pyChain:
                 pow += 1
 
         return pow
+    
+    def Validate(self):
+        for i in range(1,len(self.chain)):
+            current_chain = self.chain[i]
+            prev_chain = self.chain[i-1]
+            prev_chain["hash"] = ""
+
+            current_hash = hashlib.sha256(self.toDigest(
+                current_chain["index"],
+                current_chain["pow"],
+                prev_chain["pow"],
+                current_chain["nonce"],
+                current_chain["data"]
+            )).hexdigest()
+
+            if current_chain["prev_hash"] != self.Hash(prev_chain):
+                return False
+            elif current_hash[:current_chain["difficulty"]] != "0"*current_chain["difficulty"]:
+                return False
+
+        return True
+
  
     def toDigest(self,index,pow,prev_pow,nonce,data):
         return (str((pow+prev_pow+nonce**2)+index)+data).encode()

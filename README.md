@@ -12,7 +12,7 @@
 `make serve port=6969 peer=127.0.0.1:7575`
 
 **that's it, you are running a blockahin of containing three nodes.**<br>
-*(add block to see syncing changes)*
+*(add block to see syncing changes)*<br>
 you can add more nodes by connecting it to peers of already running chain or simply run another blockchain by peer as **None**.
 
 ##### API endpoints

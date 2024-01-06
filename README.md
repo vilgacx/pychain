@@ -1,3 +1,3 @@
 # pychain
 
-little PoW blockchain written in python.
+### PoW blockchain written in python.

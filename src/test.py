@@ -1,6 +1,6 @@
 from pychain import pyChain
 
-init = pyChain()
+init = pyChain(None)
 
 # mining
 init.Mine(1234,"hello world")

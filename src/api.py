@@ -18,12 +18,8 @@ app = FastAPI()
 def home():
     instance.NodeUpdate()
     instance.Consensus()
-    return RedirectResponse(url='/chain')
-
-@app.get("/chain")
-def chain():
-    instance.Consensus()
     return instance.chain
+
 
 @app.get("/current_chain")
 def current_chain():
@@ -32,7 +28,7 @@ def current_chain():
 @app.get("/add")
 def mine(nonce:int,data:str):
     instance.Mine(nonce,data)
-    return RedirectResponse(url='/chain')
+    return RedirectResponse(url='/')
 
 @app.get("/nodes")
 def nodes():

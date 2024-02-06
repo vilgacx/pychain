@@ -8,7 +8,6 @@
 - A really simple consensus algorithm.
 - Mining difficulty is proportional to number of nodes.
 - A node updating algorithm that maintains peer-to-peer connections & consensus with all nodes.
-- Basically a bitcoin-ish type blockchain.
 
 #### Setup
 - `cd pychain/`

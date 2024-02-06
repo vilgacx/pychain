@@ -48,7 +48,7 @@ class pyChain:
         
     
     def Consensus(self):
-        updated_chain = None
+        updated_chain = None 
         current_len = len(self.chain)
         
         for node in self.nodes:
